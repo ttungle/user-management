@@ -5,9 +5,12 @@ export interface MainLayoutProps {}
 
 export function MainLayout(props: MainLayoutProps) {
   return (
-    <>
+    <div className="flex flex-column">
       <Header />
-      <Outlet />
-    </>
+
+      <main className="flex-1 w-8 mx-auto">
+        <Outlet />
+      </main>
+    </div>
   );
 }

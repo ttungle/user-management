@@ -37,4 +37,13 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
   },
   ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts'],
+  'import/resolver': {
+    node: {
+      paths: [path.resolve(__dirname, '')],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    },
+    typescript: {
+      project: path.resolve(__dirname, './tsconfig.json'),
+    },
+  },
 };
