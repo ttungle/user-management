@@ -1,6 +1,8 @@
+import { Button } from 'primereact/button';
 import { Column } from 'primereact/column';
 import { DataTable } from 'primereact/datatable';
 import { useState } from 'react';
+import { ActionCell } from './action-cell';
 
 export interface TableProps {
   data: any[];
@@ -27,6 +29,7 @@ export function Table({ data }: TableProps) {
         <Column field="username" header="User Name"></Column>
         <Column field="name" header="Name"></Column>
         <Column field="email" header="Email"></Column>
+        <Column header="Action" body={<ActionCell />}></Column>
       </DataTable>
     </div>
   );

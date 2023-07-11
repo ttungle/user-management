@@ -40,7 +40,10 @@ export function Header(props: HeaderProps) {
   ];
 
   const start = (
-    <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" height="40" className="mr-2"></img>
+    <div className="flex justify-content-center align-items-center">
+      <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" height="40" className="mr-2" />
+      <p className="font-semibold text-indigo-500 text-xl mr-6">User Management</p>
+    </div>
   );
   const end = <InputText placeholder="Search" type="text" className="w-full" />;
 

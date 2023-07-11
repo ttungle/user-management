@@ -8,6 +8,6 @@ export const userApi = {
 
   createUser(payload: any): Promise<any> {
     const url = '/users';
-    return axiosClient.patch(url, payload);
+    return axiosClient.post(url, payload);
   },
 };
