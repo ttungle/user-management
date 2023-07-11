@@ -1,4 +1,4 @@
-package com.thanhtungle.usermgmtbackend.model;
+package com.thanhtungle.usermgmtbackend.model.entity;
 
 import jakarta.persistence.*;
 

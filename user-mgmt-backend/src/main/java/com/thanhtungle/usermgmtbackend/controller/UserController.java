@@ -1,6 +1,7 @@
 package com.thanhtungle.usermgmtbackend.controller;
 
-import com.thanhtungle.usermgmtbackend.model.User;
+import com.thanhtungle.usermgmtbackend.exception.NotFoundException;
+import com.thanhtungle.usermgmtbackend.model.entity.User;
 import com.thanhtungle.usermgmtbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,5 +24,11 @@ public class UserController {
     @GetMapping("/users")
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @GetMapping("/users/{id}")
+    public User getUserById(@PathVariable Long id) {
+
+        return userRepository.findById(id).orElseThrow(() -> new NotFoundException("User with id " + id + " could not be found."));
     }
 }
