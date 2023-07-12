@@ -4,6 +4,8 @@ import com.thanhtungle.usermgmtbackend.exception.NotFoundException;
 import com.thanhtungle.usermgmtbackend.model.entity.User;
 import com.thanhtungle.usermgmtbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,5 +43,14 @@ public class UserController {
 
             return userRepository.save(user);
         }).orElseThrow(() -> new NotFoundException("No user found with id " + id));
+    }
+
+    @DeleteMapping("/users/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        if(!userRepository.existsById(id)) throw new NotFoundException("No user found with id " + id);
+
+        userRepository.deleteById(id);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
