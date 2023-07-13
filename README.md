@@ -1,7 +1,7 @@
 # user-management
 A simple CRUD project
 
-### Technology Stack
+## Technology Stack
 Component         | Technology
 ---               | ---
 Frontend          | React 18.2
