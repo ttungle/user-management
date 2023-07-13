@@ -16,8 +16,6 @@ export function UserDetailsPage(props: UserDetailsPageProps) {
     queryFn: async () => await userApi.getUser(Number(params?.id)),
   });
 
-  console.log('>>> check: ', userData);
-
   return (
     <Card title="User details" className="mt-8">
       <Avatar icon="pi pi-user" className="mb-4" size="xlarge" shape="circle" />
