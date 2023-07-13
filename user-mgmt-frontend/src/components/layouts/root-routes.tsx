@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { BASE_ROUTEs } from '../../constants/base-routes';
 import { MainLayout } from './main-layout';
 import Home from '../../features/home/pages';
+import { UserDetailsPage } from '../../features/home/pages/user-details';
 
 export const rootRouter = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ export const rootRouter = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: `${BASE_ROUTEs.userDetails}`,
+        element: <UserDetailsPage />,
       },
     ],
   },

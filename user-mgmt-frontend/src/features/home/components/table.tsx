@@ -9,7 +9,7 @@ export interface TableProps {
 
 export function Table({ data }: TableProps) {
   return (
-    <div className="card">
+    <div className="card border-1 border-200">
       <DataTable value={data} tableStyle={{ width: '100%' }}>
         <Column field="id" header="Id"></Column>
         <Column field="username" header="User Name"></Column>

@@ -6,6 +6,11 @@ export const userApi = {
     return axiosClient.get(url);
   },
 
+  getUser(userId: number): Promise<any> {
+    const url = `/users/${userId}`;
+    return axiosClient.get(url);
+  },
+
   createUser(payload: any): Promise<any> {
     const url = '/users';
     return axiosClient.post(url, payload);
