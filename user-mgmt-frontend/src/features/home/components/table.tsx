@@ -1,24 +1,10 @@
-import { Button } from 'primereact/button';
 import { Column } from 'primereact/column';
 import { DataTable } from 'primereact/datatable';
-import { useState } from 'react';
+import { UserData } from '../../../models';
 import { ActionCell } from './action-cell';
 
 export interface TableProps {
-  data: any[];
-}
-
-interface Product {
-  id: string;
-  code: string;
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-  category: string;
-  quantity: number;
-  inventoryStatus: string;
-  rating: number;
+  data: UserData[];
 }
 
 export function Table({ data }: TableProps) {
@@ -29,7 +15,7 @@ export function Table({ data }: TableProps) {
         <Column field="username" header="User Name"></Column>
         <Column field="name" header="Name"></Column>
         <Column field="email" header="Email"></Column>
-        <Column header="Action" body={<ActionCell />}></Column>
+        <Column header="Action" body={(data) => <ActionCell data={data} />}></Column>
       </DataTable>
     </div>
   );

@@ -4,6 +4,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import 'primeicons/primeicons.css';
 import { rootRouter } from './components/layouts/root-routes';
 
 function App() {
